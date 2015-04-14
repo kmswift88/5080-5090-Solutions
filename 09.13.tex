@@ -1,0 +1,31 @@
+\paragraph{9.13}
+
+Find the MLEs of $\mu, \sigma_1^2, \sigma_2^2$ given $X_i \sim N(\mu,\sigma_1^2)$ and $ Y_i \sim\ N(\mu,\sigma_2^2)$. 
+\enspace Assume $\sigma_1^2$ , $\sigma_2^2$ are known:
+\begin{align*}
+L(\mu, \sigma_1^2,\sigma_2^2) &= (\prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_1^2}} e^\frac{-(x_i - \mu)^2}{2\sigma_1^2}) (\prod_{k=1}^m \frac{1}{\sqrt{2\pi\sigma_2^2}} e^\frac{-(y_k - \mu)^2}{2\sigma_2^2})
+\\
+let\quad \theta_1 = \sigma_1^2\enspace;\enspace &\theta_2 =\sigma_2^2
+\\
+\ell(\mu, \theta_1,\theta_2) & = \sum_{i=1}^n(C-\frac{1}{2}\log(\theta_1) - \frac{-(x_i - \mu)^2}{2\theta_1}) + \sum_{k=1}^m(D-\frac{1}{2}\log(\theta_2) - \frac{-(y_k - \mu)^2}{2\theta_2})
+\end{align*} \begin{multline*}
+= nC-\frac{n}{2}\log(\theta_1) + mD - \frac{m}{2}\log(\theta_2)\\-\frac{\sum_{i=1}^n -(x_i - \mu)^2}{2\theta_1} - \frac{\sum_{k=1}^m -(y_k - \mu)^2}{2\theta_2} 
+\end{multline*} \begin{align*}
+\frac{d \ell}{d \mu} &=
+\frac{2\sum_{i=1}^n -(x_i - \mu)^2}{2\theta_1} - \frac{2\sum_{k=1}^m -(y_k - \mu)^2}{2\theta_2}
+\\
+&\implies\frac{\sum_{i=1}^n -(x_i - \mu)^2}{\theta_1} - \frac{\sum_{k=1}^m -(y_k - \mu)^2}{\theta_2} = 0
+\\
+&\implies\theta_2\sum_{i=1}^n(x_i-\mu) +\theta_1\sum_{k=1}^m(y_k-\mu) = 0
+\\
+&\implies\theta_2\sum_{i=1}^nx_i-n\theta_2\mu + \theta_1\sum_{k=1}^my_k-m\theta_1\mu = 0
+\\
+&\implies\theta_2\sum_{i=1}^nx_i + \theta_1\sum_{k=1}^my_k = n\theta_2\mu + m\theta_1\mu
+\\
+&\implies\theta_2\sum_{i=1}^nx_i + \theta_1\sum_{k=1}^my_k = \mu(n\theta_2 + m\theta_1)
+\\
+\mu &= \frac{\theta_2\sum x_1 + \theta_1\sum y_k}{m\theta_1 + n\theta_2}
+\\
+&= (\frac{n\theta_2}{m\theta_1+n\theta_2})\bar{x} + (\frac{m\theta_1}{m\theta_1+n\theta_2})\bar{y}
+\end{align*}
+
